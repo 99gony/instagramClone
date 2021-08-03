@@ -54,7 +54,7 @@ app.use(session({
   },
 }));
 app.use(cors({
-  origin:['http://localhost:3000', 'koelinsta.com'],
+  origin:['http://localhost:3000', 'koelinsta.com', 'http://13.124.116.186'],
   credentials: true,
 }));
 app.use(passport.initialize());

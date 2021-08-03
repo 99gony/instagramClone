@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://13.124.116.186';
 axios.defaults.withCredentials = true;
 
-export const backendServer = 'http://localhost:8080';
+export const backendServer = 'http://3.35.48.92';
 
 export const loginAction = createAsyncThunk('user/login', async(data, {rejectWithValue})=>{
   try{
