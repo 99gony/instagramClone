@@ -9,6 +9,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const passport = require('passport');
 const passportConfigure = require('./passport');
+const hpp = require('hpp');
+const helmet = require('helmet');
 
 dotenv.config();
 
@@ -28,6 +30,14 @@ sequelize.sync({ force : false})
     console.error(err)
   })
 
+if(process.env.NODE_ENV === 'production'){
+  app.use(morgan('combined'));
+  app.use(hpp());
+  app.use(helmet());
+}else{
+  app.use(morgan('dev'));
+}
+
 app.use(morgan('dev'));
 app.use('/', express.static(path.join(__dirname, 'uploads')));
 app.use('/img', express.static(path.join(__dirname, 'public')));
@@ -44,7 +54,7 @@ app.use(session({
   },
 }));
 app.use(cors({
-  origin:true,
+  origin:['http://localhost:3000', 'koelinsta.com'],
   credentials: true,
 }));
 app.use(passport.initialize());
