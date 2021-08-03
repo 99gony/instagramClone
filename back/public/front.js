@@ -1,0 +1,1 @@
+export const frontServer = 'http://localhost:3000';
