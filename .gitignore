@@ -1,3 +1,4 @@
 .next
 node_modules
 instaClone.pem
+.env
