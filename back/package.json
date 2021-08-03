@@ -2,12 +2,12 @@
   "name": "nodebird-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app",
     "start": "cross-env NODE_ENV=production pm2 start app.js"
   },
-  "author": "",
+  "author": "Koel",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.12"
