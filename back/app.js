@@ -21,7 +21,7 @@ const postRouter = require('./routers/post');
 const postsRouter = require('./routers/posts');
 const hashtagRouter = require('./routers/hashtag');
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 80);
 
 sequelize.sync({ force : false})
   .then(()=>{
